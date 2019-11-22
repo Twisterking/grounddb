@@ -1,22 +1,22 @@
 Package.describe({
   name: "ground:db",
-  version: "0.0.0-semantic-release",
+  version: "1.0.0",
   summary: "Ground Meteor.Collections offline",
   git: "https://github.com/GroundMeteor/db.git"
 });
 
 Npm.depends({
-  localforage: '1.4.0',
+  localforage: '1.7.3',
+  lodash: '4.17.5'
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('METEOR@1.3');
+  api.versionsFrom('METEOR@1.7');
   api.use(['ecmascript', 'mongo-id', 'reactive-var', 'diff-sequence', 'minimongo']);
 
   api.use([
-    'underscore',
     'ejson',
-    'raix:eventstate@0.0.2',
+    'raix:eventstate@0.0.5',
   ], ['client', 'server']);
 
   api.export('Ground');
